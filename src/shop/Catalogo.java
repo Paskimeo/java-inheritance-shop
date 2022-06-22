@@ -11,21 +11,26 @@ public class Catalogo {
 		 Scanner scan = new Scanner(System.in);
 		 String conferma;
 		
-		
-		
-		
-		 
-		 
+		 int numero;
 		 boolean finito = false;
+		 
+		
+		 
 
 		    while (!finito) {
 		      System.out.println(
-		          "Cosa vuoi comprare ?  1 smartphone, 2 televisore, 3 Cuffie");
+		          "Cosa vuoi comprare ?  1 smartphone, 2 televisore, 3 Cuffie, 4 per uscire");
 		      String scelta = scan.nextLine();
 		
 		      switch (scelta) {
 		        case "1":
 		          // inserire smartphone
+		        	System.out.println("inserisci quanti prodotti vuoi inserire:");
+		   		 numero = Integer.parseInt(scan.nextLine());
+		        	
+		   		Prodotto[] prodotti = new Prodotto[numero];
+		        	
+		        for	(int i = 0; i < numero; i++) {
 		          System.out.print("Inserisci nome prodotto:");
 		          String prodottoInput = scan.nextLine();
 		          
@@ -45,11 +50,23 @@ public class Catalogo {
 		         int memoryInput =Integer.parseInt(scan.nextLine());
 		          
 		          Smarphone smar = new Smarphone (prodottoInput, marcaInput,codiceInput, prezzoInput,ivaInput,   memoryInput);
-		  		  System.out.println(smar.toString());
+		          prodotti[i] = smar;
+		        }
+		        for(int i = 0; i < numero; i++) {
+		          System.out.println(prodotti[i]);
+		          
+		        }
 		  		  break;
 		  		  
 		        case "2":
-		        	// inserimento cuffie
+		        	// inserimento TV
+		        	System.out.println("inserisci quanti prodotti vuoi inserire:");
+			   		 numero = Integer.parseInt(scan.nextLine());
+			        	
+			   		Prodotto[] prodottiTv = new Prodotto[numero];
+			        	
+			        for	(int i = 0; i < numero; i++) {
+		        	
 		        	 System.out.print("Inserisci nome prodotto:");
 			          String prodotto = scan.nextLine();
 			          
@@ -81,12 +98,24 @@ public class Catalogo {
 			          }
 			          
 			          Televisori tele = new Televisori(prodotto, marca,codiceTv,prezzoTv, ivaTv,dimensioniTv, Tv);
-			          System.out.println(tele.toString());
+			          prodottiTv[i] = tele;
+			        }
+			        for(int i = 0; i < numero; i++) {
+				          System.out.println(prodottiTv[i]);
+				          
+				        }
 			          break;
 			          
 			          
 		        case "3":    
 		        	 //inserimento cuffie
+		        	System.out.println("inserisci quanti prodotti vuoi inserire:");
+			   		 numero = Integer.parseInt(scan.nextLine());
+			        	
+			   		Prodotto[] prodottiCuffie = new Prodotto[numero];
+			   		
+			   	 for	(int i = 0; i < numero; i++) {
+		        	
 		        	 System.out.print("Inserisci nome prodotto:");
 			          String prodottoCuffie = scan.nextLine();
 			          
@@ -118,8 +147,17 @@ public class Catalogo {
 			          }
 			          
 			          Cuffie cuff = new Cuffie(prodottoCuffie, marcaCuffie, codiceCuffie,prezzoCuffie, ivaCuffie, colore, wire);
-			  		  System.out.println(cuff.toString());
+			          prodottiCuffie[i] = cuff;
+			     }
+			        for(int i = 0; i < numero; i++) {
+				          System.out.println(prodottiCuffie[i]);
+				          
+				        }
 			  		  break;
+			  		  
+		        case "4":  
+		        	System.out.println("grazie e arrivederci");
+		        	finito = true;
 		      }
 		      
 		    }
