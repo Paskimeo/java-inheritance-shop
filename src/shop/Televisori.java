@@ -29,11 +29,11 @@ public class Televisori extends Prodotto {
 		this.smart = smart;
 	}
 	
-	
 	//frase finale
-	public String toString()
-	{
-		return "Il televisore " + super.getNome()	+ "di marca" + super.getMarca() + " con il codice " +
-				super.getCodice() + " e delle dimensioni " 	+getDimensioni() + " viene venduto ad un prezzo di " + super.prezzoTotale();
-	}
+		public String toString()
+		{
+			return "Il televisore " + super.getNome()	+ "di marca" + super.getMarca() + " con il codice " +
+					super.getCodice() + " e delle dimensioni " 	+getDimensioni() + " viene venduto ad un prezzo di " + super.prezzoTotale()
+					+ "è smart il televisore?" + isSmart(); }
+	
 }
