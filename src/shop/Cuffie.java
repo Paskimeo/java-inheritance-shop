@@ -6,15 +6,15 @@ public class Cuffie extends Prodotto
 	//attributi
 	String colore;
 	boolean wireless;
-	boolean cablate;
+	
 	
 	//costruttore
-	public Cuffie(String nome, String marca, int codice, int prezzo, double iva, String colore, boolean wireless, boolean cablate )
+	public Cuffie(String nome, String marca, int codice, int prezzo, double iva, String colore, boolean wireless )
 	{
 		super(nome, marca, codice, prezzo, iva);
 		this.colore = colore;
 		this.wireless = wireless;
-		this.cablate = wireless;
+	
 		
 		
 
@@ -35,12 +35,23 @@ public class Cuffie extends Prodotto
 	public void setWireless(boolean wireless) {
 		this.wireless = wireless;
 	}
-
-	public boolean isCablate() {
-		return cablate;
-	}
-
-	public void setCablate(boolean cablate) {
-		this.cablate = cablate;
+	
+	//metodi
+	public String toString()
+	{
+		// boolean wireless
+		String wireL = "";
+			if(wireless)
+			{
+				wireL  = "le tue cuffie sono wireless";
+			}else 
+			{
+				wireL = "le tue cuffie hanno il cavo";
+			}
+		
+		
+		return "le cuffie " + super.getNome()	+ " di marca " + super.getMarca() + " con il codice " +
+				super.getCodice() + " di colore " 	+ getColore() + " viene venduto ad un prezzo di " + super.prezzoTotale() + " e " 
+				+ wireL ; 
 	}
 }

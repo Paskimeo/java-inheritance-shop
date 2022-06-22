@@ -47,7 +47,7 @@ public class Smarphone extends Prodotto {
 	//metodo
 	public String toString()
 	{
-		return "Il telefono " + super.getNome()	+ "di marca" + super.getMarca() + " con il codice " +
+		return "Il telefono " + super.getNome()	+ " di marca " + super.getMarca() + " con il codice " +
 				super.getCodice() + " e IMEI " 	+getImei()	+ " con memoria di Gigabyte  " +
 				getMemory() + " viene venduto ad un prezzo di " + super.prezzoTotale();
 	}
